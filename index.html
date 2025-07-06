@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Tracker Mejorado</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>📆 Agenda de Tareas</h1>
+    <label>Seleccionar Rango de Fechas</label>
+    <input type="date" id="startDate" />
+    <input type="date" id="endDate" />
+    <button onclick="generarDias()">Crear Agenda</button>
+    <button onclick="reiniciarAgenda()">🧹 Reiniciar</button>
+    <button onclick="mostrarResumen()">📊 Ver Progreso</button>
+  </div>
+
+  <div class="taskContainer" id="taskContainer"></div>
+
+  <!-- Modal gráfico -->
+  <div class="modal" id="resumenModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarResumen()">&times;</span>
+      <canvas id="taskChart"></canvas>
+      <div id="progressSummary"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
